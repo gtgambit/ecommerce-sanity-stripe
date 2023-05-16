@@ -1,0 +1,33 @@
+{
+  "name": "ecomerce-app-react-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@sanity/client": "^6.0.1",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.10.0",
+    "@stripe/stripe-js": "^1.52.1",
+    "@types/node": "18.16.3",
+    "@types/react": "18.2.4",
+    "@types/react-dom": "18.2.3",
+    "canvas-confetti": "^1.6.0",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.4",
+    "next": "13.3.4",
+    "next-sanity-image": "^6.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.8.0",
+    "sanity": "^3.10.0",
+    "stripe": "^12.3.0",
+    "styled-components": "^5.3.10",
+    "typescript": "5.0.4"
+  }
+}
