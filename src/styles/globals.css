@@ -748,4 +748,7 @@ span.text-red {
     width: 300px;
     margin: auto;
   }
+  .btn-big-logo{
+    width:10px;
+  }
 }
