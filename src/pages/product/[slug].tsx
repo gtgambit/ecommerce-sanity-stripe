@@ -46,20 +46,21 @@ const ProductsDetails: React.FC<ProductDetailsProps> = ({
         <div>
           <div className="image-container">
             <img
-              src={urlFor(image && image[index])}
+              src={urlFor(image && image[index]).url()}
               className="product-detail-image"
+              alt=""
             />
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
-              // eslint-disable-next-line @next/next/no-img-element
               <img
                 key={i}
-                src={urlFor(item)}
+                src={urlFor(item).url()}
                 className={
                   i === index ? "small-image selected-image" : "small-image"
                 }
                 onMouseEnter={() => setIndex(i)}
+                alt=""
               />
             ))}
           </div>
@@ -148,8 +149,6 @@ export const getStaticProps = async ({ params: { slug } }: any) => {
 
   const product = await client.fetch(query);
   const products = await client.fetch(productsQuery);
-
-  console.log(product);
 
   return {
     props: { products, product },
