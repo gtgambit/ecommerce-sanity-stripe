@@ -27,6 +27,11 @@ const Cart: React.FC = () => {
   const handleCheckOut = async () => {
     const stripe = await getStripe();
 
+    if (!stripe) {
+      // Handle the case when stripe is null
+      return;
+    }
+
     const response = await fetch("/api/stripe", {
       method: "POST",
       headers: {
