@@ -73,10 +73,10 @@ const Cart: React.FC = () => {
 
         <div className="product-container">
           {cartItems.length >= 1 &&
-            cartItems.map((item) => (
+            cartItems.map((item: any) => (
               <div className="product" key={item._id}>
                 <img
-                  src={urlFor(item.image[0])}
+                  src={urlFor(item.image[0]).url()}
                   alt={item.name || ""}
                   className="cart-product-image"
                 />
