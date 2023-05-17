@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import {
   AiOutlineMinus,
@@ -11,7 +13,21 @@ import { client, urlFor } from "../../../lib/client";
 import { Product } from "@/../components";
 import { useStateContext } from "@/../context/StateContext";
 
-const ProductsDetails = ({ product, products }) => {
+interface ProductDetailsProps {
+  product: {
+    _id: string;
+    image: string[];
+    name: string;
+    details: string;
+    price: number;
+  };
+  products: any[]; // Update this type based on your data structure
+}
+
+const ProductsDetails: React.FC<ProductDetailsProps> = ({
+  product,
+  products,
+}) => {
   const { image, name, details, price } = product;
 
   const [index, setIndex] = useState(0);
@@ -36,6 +52,7 @@ const ProductsDetails = ({ product, products }) => {
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
               <img
                 key={i}
                 src={urlFor(item)}
@@ -113,7 +130,7 @@ export const getStaticPaths = async () => {
 
   const products = await client.fetch(query);
 
-  const paths = products.map((product) => ({
+  const paths = products.map((product: any) => ({
     params: {
       slug: product.slug.current,
     },
@@ -125,7 +142,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params: { slug } }) => {
+export const getStaticProps = async ({ params: { slug } }: any) => {
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
   const productsQuery = '*[_type == "product"]';
 
