@@ -25,7 +25,8 @@
     "context/StateContext.js",
     "lib/getStripe.ts",
     "lib/utils.js",
-    "lib/client.ts"
+    "lib/client.ts",
+    "src/pages/api/stripe.js"
   ],
   "exclude": ["node_modules"]
 }
