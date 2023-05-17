@@ -23,7 +23,7 @@
     "**/*.ts",
     "**/*.tsx",
     "context/StateContext.js",
-    "lib/getStripe.ts"
+    "lib/getStripe.js"
   ],
   "exclude": ["node_modules"]
 }
