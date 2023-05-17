@@ -1,4 +1,4 @@
-interface Banner {
+export interface Banner {
   name: string
   title: string
   type: string

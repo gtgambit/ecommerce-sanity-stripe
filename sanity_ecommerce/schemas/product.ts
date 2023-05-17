@@ -1,4 +1,4 @@
-interface Product {
+export interface Product {
   name: string
   title: string
   type: string
