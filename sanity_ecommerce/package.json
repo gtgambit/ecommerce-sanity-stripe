@@ -15,7 +15,7 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/client": "^6.1.0",
+    "@sanity/client": "^5.4.2",
     "@sanity/vision": "^3.10.0",
     "@stripe/stripe-js": "^1.53.0",
     "next-sanity-image": "^6.0.0",
